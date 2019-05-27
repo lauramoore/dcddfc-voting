@@ -8,6 +8,14 @@ function check (userid){
   else return true;
 }
 
+function find(userid){
+  if (check(userid)){
+    const user = userstore[userid];
+    if (user) return user;
+  }
+  return undefined;
+}
+
 
 function register(userid){
     if (check(userid)) {
@@ -22,5 +30,6 @@ function register(userid){
 
 module.exports = {
   check: check,
+  find: find,
   register: register
 }
